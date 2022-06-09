@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,800&display=swap');
+* {
+    font-family: 'Raleway';
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display:grid;
+    grid-template-areas: 'title input-form''output output';
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100vh 100vh; 
+    overflow: hidden;
+}
+
+
+.title {
+    grid-area: title;
+    background-color: #292929;
+    box-shadow: 1px 0px 5px #2a2a2a;
+    color: white;
+    
+    display: grid;
+    grid-template-columns: min-content;
+    justify-content: left;
+    align-items: center;
+}
+.title > *{
+    margin-left: 3vw;
+}
+
+header h1{
+    font-size: calc(40px + 4vw);
+    overflow: hidden;
+
+}
+header h1:hover{
+    cursor: default;
+}
+
+header h1:nth-child(1){
+    background: linear-gradient(to left, white, white 50%, #FF6565 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+   
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 400ms ease;
+}
+
+header h1:nth-child(1):hover {
+    background-position: 0 100%;
+}
+
+
+header h1:nth-child(2){
+    background: linear-gradient(to left, white, white 50%, #65B5FF 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+   
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 400ms ease;
+}
+
+header h1:nth-child(2):hover{
+    background-position: 0 100%;
+}
+
+
+header h1:nth-child(3){
+    background: linear-gradient(to left, white, white 50%, #8EE564 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+   
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 500ms ease-in-out;
+}
+
+header h1:nth-child(3):hover{
+
+    background-position: 0 100%;
+}
+
+nav {
+    display: grid;
+}
+
+nav a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-shadow: inset 5px 0 0 0 #141414;  
+    transition: 0.5s ease-in-out;
+}
+
+nav a:hover {
+    padding-left: 10%;
+    box-shadow: inset 100vh 0 0 0 #141414;  
+}
+
+
+
+
+.container section,form{
+    padding:50px
+}
+
+form {
+
+    grid-area: input-form;
+    justify-self: center;
+
+    display: grid;
+    
+    grid-template-columns: 2fr;
+    justify-content: left;
+    align-items: center;
+    height: 90%;
+    width: 70%;
+}
+
+form label{
+    font-size: calc(50px + 0.5vh + 0.5vw);
+    font-weight: 600;
+}
+form label:hover{
+    cursor: default;
+}
+
+form p{
+    font-size: 20px;
+}
+
+form input{
+    height: 40px;
+    width: 100%;
+    border: none; 
+    text-align: start; 
+    padding: 5px;
+    box-shadow: 0px 5px 10px #f4f4f4;
+    font-size: 30px; 
+    font-weight: 500;
+    background-color: #e8e8e8;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form input[type='number']{
+    align-self: center;
+    width: 60%;
+}
+
+form button {
+    height: 60px;
+    width: 100%;
+    border: none;
+   
+    color: #292929;
+    background-color: transparent;
+    
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    justify-self: center; 
+    
+    padding-left: 10px; 
+    transition: 0.5s 0s ease-in-out; 
+
+    box-shadow: inset 5px 0 0 0 #292929;
+}
+
+form button:hover {
+    box-shadow: inset 100vw 0 0 0 #292929; 
+    color:white;
+    padding-left: 10%;
+    cursor: pointer;
+}
+
+
+
+
+.title-input{
+    color: #FF6565;
+}
+
+.creator-input{
+    color: #65B5FF;
+}
+
+.media-type-input{
+    color: #8EE564;
+}
+.score-input{
+    color: #f2ec3f;
+}
+.score-input label {
+    margin-right: 20px;
+}
+
+.output{
+    grid-area: output;
+    background-color: #292929;
+}
+
+
+@media only screen and (max-width: 885px) {
+   .container{
+        grid-template-areas: 
+        'title' 
+        'input-form'
+        'output';
+       
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh 100vh 100vh;
+        overflow: scroll;
+   }
+   form input {
+       height: 30px;
+   }
+   form > *{
+       margin-top: 5px;
+       margin-bottom:5px;
+   }
+}
