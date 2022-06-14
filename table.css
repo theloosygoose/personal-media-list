@@ -1,0 +1,11 @@
+.output{
+    padding: 0;
+    color: white;
+}
+table{
+    width: 100%;
+}
+table thead{
+    font-size: 20px;
+    font-weight: 900;
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="table.css">
     <title>Book List</title>
 </head>
 <body>
@@ -15,6 +16,7 @@
                 <h1>Media</h1>
                 <h1>Reviews</h1>
             </header>
+            <hr>
             <nav>
                 <a href="#">Reviews</a>
                 <a href="#">Stats</a>
@@ -40,8 +42,21 @@
             <button type="submit">Add Entry</button>
         </form>
         <section class="output">
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Creator</th>
+                    <th>Media Type</th>
+                    <th>Score</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="table-list"></tbody>
+            </table>
 
         </section>
     </div> 
+    <script src="app.js"></script>
 </body>
 </html>

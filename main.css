@@ -5,12 +5,14 @@
     padding: 0;
 }
 
+html {
+    overflow-x: hidden;
+}
 .container {
     display:grid;
     grid-template-areas: 'title input-form''output output';
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 100vh 100vh; 
-    overflow: hidden;
 }
 
 
@@ -49,6 +51,7 @@ header h1:nth-child(1){
     background-size: 200% 100%;
     background-position: 100%;
     transition: background-position 400ms ease;
+
 }
 
 header h1:nth-child(1):hover {
@@ -102,7 +105,8 @@ nav a {
     text-decoration: none;
     padding: 10px;
     margin-bottom: 30px;
-    box-shadow: inset 5px 0 0 0 #141414;  
+    box-shadow: inset 5px 0 0 0 #141414; 
+    -webkit-transition: 0.5s ease-in-out; 
     transition: 0.5s ease-in-out;
 }
 
@@ -114,7 +118,7 @@ nav a:hover {
 
 
 
-.container section,form{
+.container section{
     padding:50px
 }
 
@@ -128,8 +132,10 @@ form {
     grid-template-columns: 2fr;
     justify-content: left;
     align-items: center;
-    height: 90%;
     width: 70%;
+
+    padding-top: 12vh;
+    padding-bottom: 12vh;
 }
 
 form label{
