@@ -1,0 +1,115 @@
+
+.container section{
+    padding:50px
+}
+
+form {
+
+    grid-area: input-form;
+    justify-self: center;
+    align-self: center;
+
+    display: grid;
+
+    grid-gap: 20px;    
+    grid-template-columns: 2fr;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+
+}
+
+form label{
+    font-size: calc(40px + 0.5vh + 0.5vw);
+    font-weight: 600;
+}
+form label:hover{
+    cursor: default;
+}
+
+form p{
+    font-size: 20px;
+}
+
+form input, textarea, select{
+    height: 40px;
+    width: 100%;
+    border: none; 
+    text-align: start; 
+    padding: 5px;
+    box-shadow: 0px 5px 10px #f4f4f4;
+    font-size: 20px; 
+    font-weight: 500;
+    background-color: #e8e8e8;
+}
+form textarea {
+    font-size: 15px;
+}
+
+form input:focus, textarea:focus{
+    outline: none;
+}
+form input[type='number']{
+    align-self: center;
+    width: 60%;
+}
+
+form button {
+    border: none;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    background-color: #292929;
+    
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    justify-self: center;
+    text-align: center;
+
+    transition: background-color 100ms;
+}
+form button:active{
+    background-color: #8EE564;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+
+
+
+.title-input{
+    color: #FF6565;
+}
+
+.creator-input{
+    color: #65B5FF;
+}
+
+.media-type-input{
+    color: #8EE564;
+}
+.comment-input{
+    color: #9b3dfa;
+}
+.score-input{
+    color: #f2ec3f;
+}
+.score-input label {
+    margin-right: 20px;
+}
+
+@media only screen and (max-width:885px) {
+    form input {
+        height: 30px;
+    }
+    form > *{
+        margin-top: 5px;
+        margin-bottom:5px;
+    }
+    form div label {
+    font-size: 30px;
+    }
+}

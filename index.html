@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <script src="https://kit.fontawesome.com/a71ae67ef9.js" crossorigin="anonymous"></script>
     <title>Book List</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
             </header>
             <hr>
             <nav>
-                <a href="#">Reviews</a>
+                <a href="#media-list">Reviews</a>
                 <a href="#">Stats</a>
             </nav>
         </section>
@@ -33,7 +35,17 @@
             </div>
             <div class="media-type-input">
                 <label for="mediaTypeInput">Media Type</label>
-                <input type="text" name="media-type-input" id="mediaTypeInput">
+                <select name="media-type-input" id="mediaTypeInput">
+                    <option value="Music Album">Music Album</option>
+                    <option value="TV Series">TV Series</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Song">Song</option>
+                    <option value="Book">Book</option>
+                </select>
+            </div>
+            <div class="comment-input">
+                <label for="commentInput">Comments</label>
+                <textarea name="comment-input" id="commentInput" cols="30" rows="2"></textarea>
             </div>
             <div class="score-input">
                 <label for="scoreInput">Score</label>
@@ -44,13 +56,14 @@
         <section class="output">
             <table id="media-list">
                 <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Creator</th>
-                    <th>Media Type</th>
-                    <th>Score</th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Title</th>
+                        <th>Creator</th>
+                        <th>Media Type</th>
+                        <th>Comments</th>
+                        <th>Score</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody id="table-list"></tbody>
             </table>

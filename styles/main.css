@@ -7,6 +7,18 @@
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.alert {
+    padding: 15px;
+}
+.error {
+    background-color: #FF6565;
+    color: white;
+}
+.success{
+    background-color: #8EE564;
+    color: white;
 }
 .container {
     display:grid;
@@ -91,7 +103,6 @@ header h1:nth-child(3){
 }
 
 header h1:nth-child(3):hover{
-
     background-position: 0 100%;
 }
 
@@ -105,118 +116,44 @@ nav a {
     text-decoration: none;
     padding: 10px;
     margin-bottom: 30px;
-    box-shadow: inset 5px 0 0 0 #141414; 
-    -webkit-transition: 0.5s ease-in-out; 
-    transition: 0.5s ease-in-out;
 }
 
-nav a:hover {
-    padding-left: 10%;
-    box-shadow: inset 100vh 0 0 0 #141414;  
-}
-
-
-
-
-.container section{
-    padding:50px
-}
-
-form {
-
-    grid-area: input-form;
-    justify-self: center;
-
-    display: grid;
+nav a:nth-child(1){
+    background: linear-gradient(to left, white, white 50%, #9b3dfa 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
     
-    grid-template-columns: 2fr;
-    justify-content: left;
-    align-items: center;
-    width: 70%;
-
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-}
-
-form label{
-    font-size: calc(50px + 0.5vh + 0.5vw);
-    font-weight: 600;
-}
-form label:hover{
-    cursor: default;
-}
-
-form p{
-    font-size: 20px;
-}
-
-form input{
-    height: 40px;
-    width: 100%;
-    border: none; 
-    text-align: start; 
-    padding: 5px;
-    box-shadow: 0px 5px 10px #f4f4f4;
-    font-size: 30px; 
-    font-weight: 500;
-    background-color: #e8e8e8;
-}
-
-form input:focus {
-    outline: none;
-}
-
-form input[type='number']{
-    align-self: center;
-    width: 60%;
-}
-
-form button {
-    height: 60px;
-    width: 100%;
-    border: none;
+    color: transparent;
+    -webkit-text-fill-color:transparent;
    
-    color: #292929;
-    background-color: transparent;
-    
-    text-align: left;
-    font-size: 40px;
-    font-weight: bold;
-    justify-self: center; 
-    
-    padding-left: 10px; 
-    transition: 0.5s 0s ease-in-out; 
-
-    box-shadow: inset 5px 0 0 0 #292929;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 900ms ease, padding-left 400ms ease;
 }
 
-form button:hover {
-    box-shadow: inset 100vw 0 0 0 #292929; 
-    color:white;
+nav a:nth-child(2){
+    background: linear-gradient(to left, white, white 50%, #f2ec3f 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+   
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 900ms ease, padding-left 400ms ease;
+}
+
+nav a:nth-child(1):hover {
+    background-position: 0 100%;
     padding-left: 10%;
-    cursor: pointer;
+}
+nav a:nth-child(2):hover {
+    background-position: 0 100%;
+    padding-left: 10%;
 }
 
 
-
-
-.title-input{
-    color: #FF6565;
-}
-
-.creator-input{
-    color: #65B5FF;
-}
-
-.media-type-input{
-    color: #8EE564;
-}
-.score-input{
-    color: #f2ec3f;
-}
-.score-input label {
-    margin-right: 20px;
-}
 
 .output{
     grid-area: output;
@@ -233,13 +170,6 @@ form button:hover {
        
         grid-template-columns: 1fr;
         grid-template-rows: 100vh 100vh 100vh;
-        overflow: scroll;
-   }
-   form input {
-       height: 30px;
-   }
-   form > *{
-       margin-top: 5px;
-       margin-bottom:5px;
+        overflow: auto;
    }
 }
