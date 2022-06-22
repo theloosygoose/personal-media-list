@@ -1,8 +1,4 @@
 
-.container section{
-    padding:50px
-}
-
 form {
 
     grid-area: input-form;
@@ -68,9 +64,6 @@ form button {
     text-align: center;
 
     transition: background-color 100ms;
-}
-form button:active{
-    background-color: #8EE564;
 }
 
 form button:hover {

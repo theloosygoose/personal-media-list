@@ -1,5 +1,5 @@
 .output{
-    padding: 0;
+    padding-top: 20px;
     color: white;
 }
 table{
@@ -45,10 +45,39 @@ td:nth-child(4){
     color: white;
     text-align: center;
 }
-td p {
-    display:none;
+
+
+
+/* 
+Testing for Click to see Comments Feature
+i.fa-comment{
+    cursor: pointer;
+    user-select: none;
+    display: block;
 }
 
-td i:hover{
-    cursor: pointer;
+i.fa-comment p {
+    visibility: hidden;
+    position:absolute;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+    margin-top: -20px;
+    width: max-content;
 }
+
+i.fa-comment p::after {
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+i.fa-comment .show {
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+} */

@@ -8,7 +8,6 @@ function MediaReview(title, creator, mediaType, score, comments){
 }
 //UI COntructor
 function UI() {
-
 }
 
 UI.prototype.addBookToList = function(mediaReview){
@@ -37,7 +36,7 @@ UI.prototype.addBookToList = function(mediaReview){
             break;
     }
 
-    const commentElement = `<i class='fa-solid fa-comment fa-2xl'></i><p>${mediaReview.comments}</p>`
+    const commentElement = `<i class='fa-solid fa-comment fa-2xl'></i>`
     //Inserts cols
     row.innerHTML = `
         <td>${mediaReview.title}</td>
@@ -47,8 +46,6 @@ UI.prototype.addBookToList = function(mediaReview){
         <td>${stars}</td>
         <td><a class='fa-solid fa-inverse fa-delete-left fa-lg'></a></td>
     `;
-    console.log(row.innerHTML);
-
     list.appendChild(row);
 }
 //Show Alert
@@ -57,7 +54,7 @@ UI.prototype.showAlert = function(message, className){
    const div = document.createElement('div');
    //Add Classes
    div.className = `alert ${className}`;
-   //add Text
+   //add Text 
    div.appendChild(document.createTextNode(message));
 
    //Insert into DOM
@@ -73,6 +70,16 @@ UI.prototype.showAlert = function(message, className){
    }, 3000);
 }
 
+
+//Delete Media Entry
+UI.prototype.deleteBook = function(target){
+    if(target.className === 'fa-solid fa-inverse fa-delete-left fa-lg'){
+        target.parentElement.parentElement.remove();
+        console.log('bingo');
+    }
+}
+
+//Clear Fields
 UI.prototype.clearFields = function(){
     document.getElementById('titleInput').value = '';
     document.getElementById('creatorInput').value = '';
@@ -80,7 +87,9 @@ UI.prototype.clearFields = function(){
     document.getElementById('commentInput').value = '';
     document.getElementById('scoreInput').value = '';
 }
-//Event Listeners
+
+
+//Event Listeners for Add Book
 document.getElementById('media-form').addEventListener('submit', function(e){
     // Get form values
     const title = document.getElementById('titleInput').value,
@@ -108,3 +117,16 @@ document.getElementById('media-form').addEventListener('submit', function(e){
     e.preventDefault();
 
 });
+
+// Event Lister for delete
+document.getElementById('media-list').addEventListener('click', function(e){
+
+    const ui = new UI();
+    ui.deleteBook(e.target);
+
+
+    //Show Alert
+    ui.showAlert('Media Review Removed', 'success');
+
+    e.preventDefault();
+})
